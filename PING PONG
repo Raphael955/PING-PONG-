@@ -2,14 +2,13 @@
 import turtle
 
 
-# Création de l'écran de jeu
+"""Création de l'écran de jeu"""
 sc = turtle.Screen()
 sc.title("Pong game")
 sc.bgcolor("white")
 sc.setup(width=1000, height=600)
 
-
-# raquette de droite 
+"""raquette de droite"""
 left_pad = turtle.Turtle()
 left_pad.speed(0)
 left_pad.shape("square")
@@ -19,7 +18,7 @@ left_pad.penup()
 left_pad.goto(-400, 0)
 
 
-# Raquette de droite 
+"""Raquette de droite""" 
 right_pad = turtle.Turtle()
 right_pad.speed(0)
 right_pad.shape("square")
@@ -29,7 +28,7 @@ right_pad.penup()
 right_pad.goto(400, 0)
 
 
-# Balle du jeu 
+"""Balle du jeu"""
 hit_ball = turtle.Turtle()
 hit_ball.speed(40)
 hit_ball.shape("circle")
@@ -40,12 +39,12 @@ hit_ball.dx = 5
 hit_ball.dy = -5
 
 
-# réinitialiser le score 
+"""réinitialiser le score"""
 left_player = 0
 right_player = 0
 
 
-# Fonction du scoore 
+"""Fonction du score""" 
 sketch = turtle.Turtle()
 sketch.speed(0)
 sketch.color("blue")
@@ -56,7 +55,7 @@ sketch.write("Left_player : 0 Right_player: 0",
 			align="center", font=("Courier", 24, "normal"))
 
 
-# Functions to move paddle vertically
+""" fonction por déplacer les raquettes verticalement"""
 def paddleaup():
 	y = left_pad.ycor()
 	y += 20
@@ -81,7 +80,7 @@ def paddlebdown():
 	right_pad.sety(y)
 
 
-# 
+""" touches utilisées pour manipuler les 2 raquettes"""
 sc.listen()
 sc.onkeypress(paddleaup, "e")
 sc.onkeypress(paddleadown, "x")
